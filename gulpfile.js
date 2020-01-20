@@ -7,6 +7,14 @@ function sayHello(done) { // sayHello is the name of the task
     done();
 }
  
+// publish HTML files from src to dist
+function publishHtml(done) {
+    let pipeline = gulp.src('src/**/*.html');
+ 
+    return pipeline.pipe(gulp.dest('dist'));
+}
+ 
 // export tasks
-exports.hello   = sayHello;
 exports.default = sayHello;
+exports.hello   = sayHello;
+exports.build   = publishHtml;
